@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savaşçı Stars</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" data-section="home">
+        <span class="logo-icon">⚔</span>
+        <span class="logo-text">SAVAŞÇI <span class="logo-accent">STARS</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"   class="nav-link active" data-section="home">Ana Sayfa</a></li>
+        <li><a href="#videos" class="nav-link"        data-section="videos">Videolar</a></li>
+        <li><a href="#shorts" class="nav-link"        data-section="shorts">Shorts</a></li>
+        <li><a href="#links"  class="nav-link"        data-section="links">Linkler</a></li>
+        <li><a href="#about"  class="nav-link"        data-section="about">Hakkında</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <span class="logo-icon">⚔</span>
+      <span class="logo-text">SAVAŞÇI<span class="logo-accent">STARS</span></span>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#home"   class="mobile-link" data-section="home"><i class="fa-solid fa-house"></i> Ana Sayfa</a></li>
+      <li><a href="#videos" class="mobile-link" data-section="videos"><i class="fa-solid fa-play"></i> Videolar</a></li>
+      <li><a href="#shorts" class="mobile-link" data-section="shorts"><i class="fa-solid fa-film"></i> Shorts</a></li>
+      <li><a href="#links"  class="mobile-link" data-section="links"><i class="fa-solid fa-link"></i> Linkler</a></li>
+      <li><a href="#about"  class="mobile-link" data-section="about"><i class="fa-solid fa-user"></i> Hakkında</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <a href="#" class="social-icon-sm" id="mobileYT"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="social-icon-sm" id="mobileDC"><i class="fab fa-discord"></i></a>
+      <a href="#" class="social-icon-sm" id="mobileIG"><i class="fab fa-instagram"></i></a>
+    </div>
+  </aside>
+
+  <!-- ===================== ANA SAYFA ===================== -->
+  <section id="home" class="section section-home active">
+    <!-- Arka plan efektleri -->
+    <div class="hero-bg">
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="hero-glow"></div>
+    </div>
+
+    <!-- HERO ÜSTTE -->
+    <div class="hero-top">
+      <p class="hero-eyebrow">🎮 YouTube Kanalı</p>
+      <h1 class="hero-title">SAVAŞÇI<br><span class="hero-accent">STARS</span></h1>
+      <p class="hero-subtitle" id="heroDesc">Gaming içerikleri, rekabetçi oynanışlar ve çok daha fazlası.</p>
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-item">
+          <span class="stat-number" id="statSubs">—</span>
+          <span class="stat-label">Abone</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="statViews">—</span>
+          <span class="stat-label">Toplam İzlenme</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="statVideos">—</span>
+          <span class="stat-label">Video</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#videos" class="btn btn-primary" data-section="videos">
+          <i class="fa-solid fa-play"></i> Videoları İzle
+        </a>
+        <a href="https://youtube.com" class="btn btn-outline" id="heroYTLink" target="_blank" rel="noopener">
+          <i class="fab fa-youtube"></i> Kanala Git
+        </a>
+      </div>
+    </div>
+
+    <!-- ÖZET BÖLÜMLER (diğer sayfalardan harmanlanmış) -->
+    <div class="home-sections">
+
+      <!-- Son Videolar önizleme -->
+      <div class="home-block">
+        <div class="home-block-header">
+          <div class="home-block-title">
+            <i class="fa-solid fa-play"></i>
+            <span>Son Videolar</span>
+          </div>
+          <a href="#videos" class="home-block-link" data-section="videos">
+            Tümünü Gör <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="home-preview-grid" id="homeVideosPreview">
+          <div class="loading-spinner small"><div class="spinner"></div></div>
+        </div>
+      </div>
+
+      <!-- Son Shorts önizleme -->
+      <div class="home-block">
+        <div class="home-block-header">
+          <div class="home-block-title">
+            <i class="fa-solid fa-film"></i>
+            <span>Son Shorts</span>
+          </div>
+          <a href="#shorts" class="home-block-link" data-section="shorts">
+            Tümünü Gör <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="home-preview-grid shorts-preview-grid" id="homeShortsPreview">
+          <div class="loading-spinner small"><div class="spinner"></div></div>
+        </div>
+      </div>
+
+      <!-- Hakkında + Linkler özeti -->
+      <div class="home-bottom-row">
+        <!-- Hakkında özeti -->
+        <div class="home-about-card">
+          <div class="home-about-avatar" id="homeAvatar"><span>⚔</span></div>
+          <div class="home-about-info">
+            <h3 id="homeAboutName">Savaşçı Stars</h3>
+            <p id="homeAboutDesc">Kanal bilgileri yükleniyor…</p>
+            <a href="#about" class="btn btn-outline btn-sm" data-section="about">
+              <i class="fa-solid fa-user"></i> Hakkında
+            </a>
+          </div>
+        </div>
+
+        <!-- Linkler özeti -->
+        <div class="home-links-card">
+          <p class="home-links-title"><i class="fa-solid fa-link"></i> Beni Takip Et</p>
+          <div class="home-links-row">
+            <a href="https://youtube.com/@savascistars" target="_blank" rel="noopener" class="home-social-btn yt" id="homeSocialYT">
+              <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://discord.gg/savascistars" target="_blank" rel="noopener" class="home-social-btn dc" id="homeSocialDC">
+              <i class="fab fa-discord"></i> Discord
+            </a>
+            <a href="https://instagram.com/savascistars" target="_blank" rel="noopener" class="home-social-btn ig" id="homeSocialIG">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://twitter.com/savascistars" target="_blank" rel="noopener" class="home-social-btn tw" id="homeSocialTW">
+              <i class="fab fa-x-twitter"></i> Twitter
+            </a>
+            <a href="https://tiktok.com/@savascistars" target="_blank" rel="noopener" class="home-social-btn tt" id="homeSocialTT">
+              <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://twitch.tv/savascistars" target="_blank" rel="noopener" class="home-social-btn tv" id="homeSocialTV">
+              <i class="fab fa-twitch"></i> Twitch
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /home-sections -->
+
+  </section>
+
+  <!-- ===================== VİDEOLAR ===================== -->
+  <section id="videos" class="section section-videos">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">VİDEOLAR</h2>
+        <p class="section-sub">Son yüklenen içerikler</p>
+      </div>
+      <!-- Arama + Filtre çubuğu -->
+      <div class="toolbar">
+        <div class="search-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="videosSearch" class="search-input" placeholder="Video ara…" autocomplete="off" />
+          <button class="search-clear" id="videosClear" aria-label="Temizle">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-sort="newest" data-target="videos"><i class="fa-solid fa-calendar-plus"></i> En Yeni</button>
+          <button class="filter-btn" data-sort="oldest" data-target="videos"><i class="fa-solid fa-calendar-minus"></i> En Eski</button>
+          <button class="filter-btn" data-sort="views" data-target="videos"><i class="fa-solid fa-fire"></i> En Çok İzlenen</button>
+        </div>
+      </div>
+      <p class="search-result-label" id="videosResultLabel"></p>
+      <div class="video-grid" id="videosGrid">
+        <div class="loading-spinner"><div class="spinner"></div><p>Videolar yükleniyor…</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SHORTS ===================== -->
+  <section id="shorts" class="section section-shorts">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">SHORTS</h2>
+        <p class="section-sub">Kısa ve çarpıcı anlar</p>
+      </div>
+      <!-- Arama + Filtre çubuğu -->
+      <div class="toolbar">
+        <div class="search-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="shortsSearch" class="search-input" placeholder="Short ara…" autocomplete="off" />
+          <button class="search-clear" id="shortsClear" aria-label="Temizle">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-sort="newest" data-target="shorts"><i class="fa-solid fa-calendar-plus"></i> En Yeni</button>
+          <button class="filter-btn" data-sort="oldest" data-target="shorts"><i class="fa-solid fa-calendar-minus"></i> En Eski</button>
+          <button class="filter-btn" data-sort="views" data-target="shorts"><i class="fa-solid fa-fire"></i> En Çok İzlenen</button>
+        </div>
+      </div>
+      <p class="search-result-label" id="shortsResultLabel"></p>
+      <div class="video-grid shorts-grid" id="shortsGrid">
+        <div class="loading-spinner"><div class="spinner"></div><p>Shorts yükleniyor…</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LİNKLER ===================== -->
+  <section id="links" class="section section-links">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">LİNKLER</h2>
+        <p class="section-sub">Tüm platformlarda beni bul</p>
+      </div>
+      <div class="links-grid" id="linksGrid">
+        <a href="https://youtube.com/@savascistars_38" target="_blank" rel="noopener" class="link-card link-youtube">
+          <div class="link-icon"><i class="fab fa-youtube"></i></div>
+          <div class="link-info"><span class="link-platform">YouTube</span><span class="link-handle">@savascistars_38</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </a>
+        <a href="https://discord.gg/savascistars" target="_blank" rel="noopener" class="link-card link-discord">
+          <div class="link-icon"><i class="fab fa-discord"></i></div>
+          <div class="link-info"><span class="link-platform">Discord</span><span class="link-handle">Sunucuya Katıl</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </a>
+        <a href="https://instagram.com/savascistars" target="_blank" rel="noopener" class="link-card link-instagram">
+          <div class="link-icon"><i class="fab fa-instagram"></i></div>
+          <div class="link-info"><span class="link-platform">Instagram</span><span class="link-handle">@savascistars</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </a>
+        <a href="https://twitter.com/savascistars" target="_blank" rel="noopener" class="link-card link-twitter">
+          <div class="link-icon"><i class="fab fa-x-twitter"></i></div>
+          <div class="link-info"><span class="link-platform">Twitter / X</span><span class="link-handle">@savascistars</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </a>
+        <a href="https://tiktok.com/@savasci_stars" target="_blank" rel="noopener" class="link-card link-tiktok">
+          <div class="link-icon"><i class="fab fa-tiktok"></i></div>
+          <div class="link-info"><span class="link-platform">TikTok</span><span class="link-handle">@savasci_stars</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </a>
+        <a href="https://twitch.tv/savascistars" target="_blank" rel="noopener" class="link-card link-twitch">
+          <div class="link-icon"><i class="fab fa-twitch"></i></div>
+          <div class="link-info"><span class="link-platform">Twitch</span><span class="link-handle">savascistars</span></div>
+          <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HAKKINDA ===================== -->
+  <section id="about" class="section section-about">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">HAKKINDA</h2>
+        <p class="section-sub">Kanalı tanı</p>
+      </div>
+      <div class="about-layout">
+        <div class="about-avatar-wrap">
+          <div class="about-avatar" id="aboutAvatar"><span>⚔</span></div>
+          <div class="about-badge"><i class="fab fa-youtube"></i> YouTube Creator</div>
+        </div>
+        <div class="about-content">
+          <h3 class="about-name" id="aboutName">Savaşçı Stars</h3>
+          <p class="about-desc" id="aboutDesc">YouTube kanal bilgileri yükleniyor…</p>
+          <div class="about-stats-row" id="aboutStats">
+            <div class="about-stat">
+              <i class="fa-solid fa-users"></i>
+              <div><span class="about-stat-num" id="aboutSubs">—</span><span class="about-stat-lbl">Abone</span></div>
+            </div>
+            <div class="about-stat">
+              <i class="fa-solid fa-eye"></i>
+              <div><span class="about-stat-num" id="aboutViews">—</span><span class="about-stat-lbl">İzlenme</span></div>
+            </div>
+            <div class="about-stat">
+              <i class="fa-solid fa-video"></i>
+              <div><span class="about-stat-num" id="aboutVidCount">—</span><span class="about-stat-lbl">Video</span></div>
+            </div>
+          </div>
+          <a href="https://youtube.com/@savascistars" class="btn btn-primary" id="aboutYTLink" target="_blank" rel="noopener">
+            <i class="fab fa-youtube"></i> Kanala Abone Ol
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2024 <span class="footer-accent">Savaşçı Stars</span>. Tüm hakları saklıdır.</p>
+    <p class="footer-small">YouTube API ile güçlendirilmiştir.</p>
+  </footer>
+
+  <!-- YUKARI ÇEVRESİ DOLAN BUTON — tüm sayfalarda görünür -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Yukarı çık">
+    <svg class="scroll-ring" viewBox="0 0 50 50">
+      <circle class="scroll-ring-bg" cx="25" cy="25" r="22"/>
+      <circle class="scroll-ring-fill" cx="25" cy="25" r="22" id="scrollRingFill"/>
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ===================== VIDEO PLAYER MODAL ===================== -->
+  <div class="player-modal" id="playerModal" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="player-backdrop" id="playerBackdrop"></div>
+    <div class="player-box" id="playerBox">
+      <div class="player-header">
+        <p class="player-title" id="playerTitle">Video</p>
+        <div class="player-header-actions">
+          <a class="player-yt-link" id="playerYTLink" href="#" target="_blank" rel="noopener" title="YouTube'da Aç">
+            <i class="fab fa-youtube"></i> YouTube'da İzle
+          </a>
+          <button class="player-close" id="playerClose" aria-label="Kapat">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="player-embed-wrap" id="playerEmbedWrap">
+        <iframe
+          id="playerIframe"
+          src=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          title="Video oynatıcı"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
